@@ -11,3 +11,5 @@ RUN git clone git://github.com/sstephenson/bats.git /tmp/bats && \
 # Integration tests
 ADD test /tmp/test
 RUN bats /tmp/test
+
+CMD /bin/bash
