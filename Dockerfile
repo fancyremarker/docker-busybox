@@ -8,6 +8,8 @@ RUN opkg-install git bash
 RUN git clone git://github.com/sstephenson/bats.git /tmp/bats && \
     cd /tmp/bats && ./install.sh /usr/local && rm -rf /tmp/bats
 
+ADD templates/bashrc /root/.bashrc
+
 # Integration tests
 ADD test /tmp/test
 RUN bats /tmp/test

@@ -1,0 +1,4 @@
+# .bash_profile
+
+# Always simulate login shell
+source /etc/profile
