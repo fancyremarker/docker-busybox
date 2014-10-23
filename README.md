@@ -9,6 +9,12 @@ Busybox base image, borrowed from [progrium/busybox](https://github.com/progrium
     docker pull quay.io/aptible/busybox
     docker run -i -t quay.io/aptible/busybox
 
+To install packages cleanly, use the `opkg-install` command. This will clean up the locally cached list of OPKG packages. To review the list interactively, run:
+
+    opkg-cl -f /etc/opkg.conf update
+    opkg-cl -f /etc/opkg.conf list [...]
+    opkg-cl -f /etc/opkg.conf search [...]
+
 ## Available Tags
 
 * `latest`: v1.22.1
