@@ -1,7 +1,8 @@
 #!/usr/bin/env bats
 
 @test "It should have Bats installed" {
-  which bats
+  run which bats
+  [ "$status" -eq "0" ]
 }
 
 @test "Bats should be v0.4.0" {
