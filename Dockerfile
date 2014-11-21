@@ -1,8 +1,8 @@
 FROM progrium/busybox
 MAINTAINER Frank Macreery <frank@macreery.com>
 
-# Install Git
-RUN opkg-install git
+# Install Git and libncurses (for Ctrl-L)
+RUN opkg-install git libncurses
 
 # Install binaries
 ADD files /
