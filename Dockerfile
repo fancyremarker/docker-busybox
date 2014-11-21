@@ -1,8 +1,11 @@
 FROM progrium/busybox
 MAINTAINER Frank Macreery <frank@macreery.com>
 
-# Install Git and Bash
-RUN opkg-install git bash
+# Install Git
+RUN opkg-install git
+
+# Install binaries
+ADD files /
 
 # Install Bats
 RUN git clone git://github.com/sstephenson/bats.git /tmp/bats && \

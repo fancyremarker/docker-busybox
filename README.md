@@ -25,6 +25,20 @@ To install packages cleanly, use the `opkg-install` command. This will clean up 
 * `bash`: The Bourne Again SHell.
 * `git`: Git Version Control System.
 
+## Static Binaries
+
+Some binaries must be installed from custom static files, due to bugs in Busybox versions:
+
+### Bash
+
+Busybox's Bash doesn't support `set -o pipefail`, so we steal bash-static from Ubuntu 12.04 (Precise).
+
+```
+ID=$(docker run quay.io/aptible/ubuntu:12.04 apt-get -y install bash-static)
+docker cp $ID:/bin/bash-static files/bin
+mv files/bin/bash-static files/bin/bash
+```
+
 ## Tests
 
 Tests are run as part of the `Dockerfile` build. To execute them separately within a container, run:
